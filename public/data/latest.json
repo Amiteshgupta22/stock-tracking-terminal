@@ -1,0 +1,26 @@
+{
+  "generatedAt": "pending-first-run",
+  "symbols": {
+    "AAPL": {
+      "quote": { "current": null, "previousClose": null, "dayChangePct": 0 },
+      "newHeadlines": [],
+      "summary": "Waiting for first tracker run.",
+      "alertsToday": [],
+      "endOfDay": "Not generated yet."
+    },
+    "MSFT": {
+      "quote": { "current": null, "previousClose": null, "dayChangePct": 0 },
+      "newHeadlines": [],
+      "summary": "Waiting for first tracker run.",
+      "alertsToday": [],
+      "endOfDay": "Not generated yet."
+    },
+    "TSLA": {
+      "quote": { "current": null, "previousClose": null, "dayChangePct": 0 },
+      "newHeadlines": [],
+      "summary": "Waiting for first tracker run.",
+      "alertsToday": [],
+      "endOfDay": "Not generated yet."
+    }
+  }
+}
