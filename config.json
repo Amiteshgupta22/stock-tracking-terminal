@@ -1,0 +1,7 @@
+{
+  "symbols": ["AAPL", "MSFT", "TSLA"],
+  "pollIntervalMinutes": 5,
+  "suddenMovePercent": 2,
+  "endOfDayLocalTime": "16:00",
+  "maxNewsPerSymbolPerPoll": 5
+}

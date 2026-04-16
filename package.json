@@ -1,0 +1,13 @@
+{
+  "name": "stock-tracking-terminal",
+  "version": "1.0.0",
+  "description": "Terminal stock tracker with news summaries and movement alerts.",
+  "type": "module",
+  "scripts": {
+    "start": "node src/index.js",
+    "run-once": "node src/index.js --once",
+    "watchlist:list": "node src/watchlist.js list",
+    "watchlist:add": "node src/watchlist.js add",
+    "watchlist:remove": "node src/watchlist.js remove"
+  }
+}

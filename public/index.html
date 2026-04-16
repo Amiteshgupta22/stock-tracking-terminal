@@ -1,0 +1,55 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Stock Tracking Dashboard</title>
+    <style>
+      body { font-family: Arial, sans-serif; margin: 0; padding: 16px; background: #0f172a; color: #e2e8f0; }
+      h1 { margin-top: 0; }
+      .meta { color: #94a3b8; margin-bottom: 16px; }
+      .grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); gap: 12px; }
+      .card { background: #1e293b; border: 1px solid #334155; border-radius: 8px; padding: 12px; }
+      .symbol { font-size: 20px; margin: 0 0 6px; }
+      .summary { white-space: pre-wrap; font-size: 13px; line-height: 1.4; }
+      a { color: #7dd3fc; }
+    </style>
+  </head>
+  <body>
+    <h1>Stock Tracking Dashboard</h1>
+    <div id="meta" class="meta">Loading...</div>
+    <div id="cards" class="grid"></div>
+
+    <script>
+      async function load() {
+        const res = await fetch("./data/latest.json", { cache: "no-store" });
+        if (!res.ok) throw new Error("No latest.json found yet.");
+        const data = await res.json();
+        document.getElementById("meta").textContent = `Last update: ${data.generatedAt || "unknown"}`;
+        const root = document.getElementById("cards");
+        const symbols = data.symbols || {};
+        root.innerHTML = Object.entries(symbols).map(([symbol, details]) => {
+          const q = details.quote || {};
+          const headlines = (details.newHeadlines || [])
+            .slice(0, 3)
+            .map(h => `<li><a href="${h.url || "#"}" target="_blank" rel="noreferrer">${h.headline || "headline"}</a> (${h.source || "source"})</li>`)
+            .join("");
+          return `
+            <div class="card">
+              <h2 class="symbol">${symbol}</h2>
+              <div>Price: ${q.current ?? "-"} (${q.dayChangePct ?? 0}% vs prev close)</div>
+              <h3>New Headlines</h3>
+              <ul>${headlines || "<li>None this cycle.</li>"}</ul>
+              <h3>Summary</h3>
+              <div class="summary">${details.summary || "No summary this cycle."}</div>
+              <h3>End of Day</h3>
+              <div class="summary">${details.endOfDay || "Not generated yet."}</div>
+            </div>`;
+        }).join("");
+      }
+      load().catch((err) => {
+        document.getElementById("meta").textContent = err.message;
+      });
+    </script>
+  </body>
+  </html>

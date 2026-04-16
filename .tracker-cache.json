@@ -1,0 +1,148 @@
+{
+  "seenNews": {
+    "AAPL": [
+      "139788218",
+      "139788219",
+      "139787034",
+      "139787030",
+      "139787036",
+      "139789835"
+    ],
+    "MSFT": [
+      "139788219",
+      "139788208",
+      "139788222",
+      "139788223",
+      "139788215"
+    ],
+    "TSLA": [
+      "139788277",
+      "139788278",
+      "139788279",
+      "139788210",
+      "139788281"
+    ]
+  },
+  "lastPrices": {
+    "AAPL": 263.42,
+    "MSFT": 419.19,
+    "TSLA": 387.89
+  },
+  "dayData": {
+    "AAPL": {
+      "date": "2026-04-16",
+      "priceEvents": [],
+      "newsEvents": [
+        {
+          "time": "2026-04-16T17:35:02.432Z",
+          "headline": "People are using this storage unit side hustle hack to score almost $700 extra a month — here’s how it works",
+          "source": "Yahoo",
+          "url": "https://finnhub.io/api/news?id=44a4c816cdbfdda72f370bf5d6c677de84e3d2843e53d467808e98986446bb18"
+        },
+        {
+          "time": "2026-04-16T17:35:02.432Z",
+          "headline": "Consumers Battle Subscription Fatigue. What It Means For Netflix, Adobe.",
+          "source": "Yahoo",
+          "url": "https://finnhub.io/api/news?id=12acda496d8aee65941430d993993cec3ba608565a4232709fb2442f47f07449"
+        },
+        {
+          "time": "2026-04-16T17:35:02.432Z",
+          "headline": "Jim Cramer Says “Apple Never Really Went Anywhere”",
+          "source": "Yahoo",
+          "url": "https://finnhub.io/api/news?id=bc647542d2e1fe625a83695c9340518cc65cddd04774bc3a04eca4b8b6957328"
+        },
+        {
+          "time": "2026-04-16T17:35:02.432Z",
+          "headline": "TSMC Flags Higher Spending After Earnings Beat. What It Means for Intel.",
+          "source": "Yahoo",
+          "url": "https://finnhub.io/api/news?id=1977a5b27185928d88926b807bc992169c0a89058bfb725d93510b6191775144"
+        },
+        {
+          "time": "2026-04-16T17:35:02.432Z",
+          "headline": "Taiwan Semiconductor CEO just dropped a hint about the next move in AI stocks",
+          "source": "Yahoo",
+          "url": "https://finnhub.io/api/news?id=2365eb21a8d46c837129be48922d768815e4a8b4c4bb4c19a126c51dfc5708e2"
+        },
+        {
+          "time": "2026-04-16T17:37:38.033Z",
+          "headline": "Wall Street Hits New Records, Oil Surges On Hormuz Toll Drama: What's Moving Markets Thursday?",
+          "source": "Benzinga",
+          "url": "https://finnhub.io/api/news?id=99f1e92863507e0a86f3a7cf2d00bca5f48708cca95ac162a7290adf6b4d55bf"
+        }
+      ]
+    },
+    "MSFT": {
+      "date": "2026-04-16",
+      "priceEvents": [],
+      "newsEvents": [
+        {
+          "time": "2026-04-16T17:35:03.396Z",
+          "headline": "Consumers Battle Subscription Fatigue. What It Means For Netflix, Adobe.",
+          "source": "Yahoo",
+          "url": "https://finnhub.io/api/news?id=12acda496d8aee65941430d993993cec3ba608565a4232709fb2442f47f07449"
+        },
+        {
+          "time": "2026-04-16T17:35:03.396Z",
+          "headline": "Why I Can’t Stop Buying Nvidia Stock",
+          "source": "Yahoo",
+          "url": "https://finnhub.io/api/news?id=b8b25dd3f1952f2c6a237c9d2b409c0ddd13c7f6966fc14e0465857af056a363"
+        },
+        {
+          "time": "2026-04-16T17:35:03.396Z",
+          "headline": "Stellantis, Microsoft unveil five-year AI and cybersecurity partnership",
+          "source": "Yahoo",
+          "url": "https://finnhub.io/api/news?id=c8c6a893a9f914d72c99ebb38a32dd5fc2bd397c613765932b1148412d139e3d"
+        },
+        {
+          "time": "2026-04-16T17:35:03.396Z",
+          "headline": "Schneider Electric unveils next generation agentic manufacturing capabilities powered by Microsoft Azure AI at Hannover Messe 2026",
+          "source": "Yahoo",
+          "url": "https://finnhub.io/api/news?id=46da37fcdf08a986014395a1a4eb6734419cacf8a783b94e5205f53705588deb"
+        },
+        {
+          "time": "2026-04-16T17:35:03.396Z",
+          "headline": "Nvidia is still an AI powerhouse as chip stocks rally in April",
+          "source": "Yahoo",
+          "url": "https://finnhub.io/api/news?id=29aa766cc874fd854e9b1d64033c19479c0b8120459e441aa9f4d1dbb76e3765"
+        }
+      ]
+    },
+    "TSLA": {
+      "date": "2026-04-16",
+      "priceEvents": [],
+      "newsEvents": [
+        {
+          "time": "2026-04-16T17:35:04.485Z",
+          "headline": "Tesla Cybertruck sales bolstered by Musk’s other companies, data shows",
+          "source": "Yahoo",
+          "url": "https://finnhub.io/api/news?id=6072be767e7b0f66e37fc931383ed7ecb108c40779b472f5afa7c016e2d0978c"
+        },
+        {
+          "time": "2026-04-16T17:35:04.485Z",
+          "headline": "2026 Strategic Profiling of North America' Leading Automotive OEMs' Connected Services: Rivian, Ford, Stellantis, Ram, Chrysler, Jeep, Dodge, Lincoln, GM, Tesla",
+          "source": "Yahoo",
+          "url": "https://finnhub.io/api/news?id=a91d0109992b4d0a55c9c397125f2469d632af6fa51f62b1b6be8c6043ca6033"
+        },
+        {
+          "time": "2026-04-16T17:35:04.485Z",
+          "headline": "Lam Research Drawn Into Musk’s Terafab AI Chip Ambitions",
+          "source": "Yahoo",
+          "url": "https://finnhub.io/api/news?id=f473922ce2493b864dcd990610f08c289b49d8148c6ef99a8604a601032d2303"
+        },
+        {
+          "time": "2026-04-16T17:35:04.485Z",
+          "headline": "NYC Mayor Zohran Mamdani Says State Will Tax The 'Ultra-Wealthy And Global Elites,' Highlights Billionaire Ken Griffin's $238M Penthouse",
+          "source": "Yahoo",
+          "url": "https://finnhub.io/api/news?id=5acfcd6e8cd5a579b6e6baaec216a1eb0c84212d1e723251e2ac91cfbf46719e"
+        },
+        {
+          "time": "2026-04-16T17:35:04.485Z",
+          "headline": "Next Generation Electric Vehicles OEM Strategy Analysis Report 2026 Featuring VW, BMW, Ford, GM, Hyundai, Stellantis, Nio, Toyota, VinFast, BYD, Mercedes-Benz, Tesla",
+          "source": "Yahoo",
+          "url": "https://finnhub.io/api/news?id=661e16f74d3d11e8eb79003aa7ed204a2f04525d97129e22256052d64ca0d211"
+        }
+      ]
+    }
+  },
+  "eodRunDate": "2026-04-16"
+}
