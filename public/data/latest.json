@@ -1,26 +1,127 @@
 {
-  "generatedAt": "pending-first-run",
+  "generatedAt": "2026-05-17T05:30:17.050Z",
   "symbols": {
     "AAPL": {
-      "quote": { "current": null, "previousClose": null, "dayChangePct": 0 },
-      "newHeadlines": [],
-      "summary": "Waiting for first tracker run.",
-      "alertsToday": [],
-      "endOfDay": "Not generated yet."
+      "quote": {
+        "current": 300.23,
+        "previousClose": 298.21,
+        "dayChangePct": 0.68
+      },
+      "newHeadlines": [
+        {
+          "headline": "Under Greg Abel, Apple Stock Looks Like It's Here to Stay in Berkshire Hathaway's Portfolio",
+          "source": "Yahoo",
+          "url": "https://finnhub.io/api/news?id=850d86f7b67ef5f0e31af2a408bfe79c389e8ca5d46af517bc4b90246ee29a3b"
+        },
+        {
+          "headline": "Peter Navarro Once Slammed Tesla Over China Reliance—Now Xi Jinping Says Beijing Will Open Wider To US Companies Amid Trump Visit",
+          "source": "Yahoo",
+          "url": "https://finnhub.io/api/news?id=4d780fd1bb3d590bc894c569b0cc00af81bb392438629208e3e30a67626b3811"
+        },
+        {
+          "headline": "NANC Traders Beat the Crowd by 33 Points and the Difference Keeps Growing",
+          "source": "Yahoo",
+          "url": "https://finnhub.io/api/news?id=20c4f971b842228949339acad7fad77dda5ff05f37b3ea8be36fba7f1a2062c3"
+        },
+        {
+          "headline": "Apple Intel Foundry Link Puts ASML Growth And Valuation In Focus",
+          "source": "Yahoo",
+          "url": "https://finnhub.io/api/news?id=dddecbc616213b7d5fbc8f73ca5af756c019377fb2880e1656e7a0b8ad174f70"
+        },
+        {
+          "headline": "Apple Settlement Over ‘Apple Intelligence’ Claims And What It Means For AAPL",
+          "source": "Yahoo",
+          "url": "https://finnhub.io/api/news?id=94f1ffe0922b3db835e2ed0e999a4e66ff7c1ec14a555aa5adb1652b38289308"
+        }
+      ],
+      "summary": "Gemini summary unavailable (likely quota/rate limit).\n- Price snapshot: 300.23 (0.68% vs prev close)\n- New items: 5\n- 1. Under Greg Abel, Apple Stock Looks Like It's Here to Stay in Berkshire Hathaway's Portfolio (Yahoo)\n- 2. Peter Navarro Once Slammed Tesla Over China Reliance—Now Xi Jinping Says Beijing Will Open Wider To US Companies Amid Trump Visit (Yahoo)\n- 3. NANC Traders Beat the Crowd by 33 Points and the Difference Keeps Growing (Yahoo)\n- Impact: review headlines manually; short-term volatility possible.\n- Technical note: Gemini failed: 429 (cooldown 10m)",
+      "alertsToday": []
     },
     "MSFT": {
-      "quote": { "current": null, "previousClose": null, "dayChangePct": 0 },
-      "newHeadlines": [],
-      "summary": "Waiting for first tracker run.",
-      "alertsToday": [],
-      "endOfDay": "Not generated yet."
+      "quote": {
+        "current": 421.92,
+        "previousClose": 409.43,
+        "dayChangePct": 3.05
+      },
+      "newHeadlines": [
+        {
+          "headline": "A quarter of recent layoffs has been attributed to AI",
+          "source": "Yahoo",
+          "url": "https://finnhub.io/api/news?id=df05ec26a25f54b4b4a2d27783c6aeba1818c4c02af8e6496e7d871223984eda"
+        },
+        {
+          "headline": "OneStream (OS) Valuation Check After Expanded Microsoft AI Partnership News",
+          "source": "Yahoo",
+          "url": "https://finnhub.io/api/news?id=04b355159bd3adc5aa432c6366087c578c8e8baa79baa1687fd9cc1f741bd34e"
+        },
+        {
+          "headline": "Bill Ackman discloses new $2.09 billion stake in megacap tech stock",
+          "source": "Yahoo",
+          "url": "https://finnhub.io/api/news?id=e89a36297dad39d3f8104ba89016e1d26f7fe268e0182efe733ec852834342d0"
+        },
+        {
+          "headline": "$800B in AI spending is juicing GDP and stocks — while real wages fall and Americans cut back on goods",
+          "source": "Yahoo",
+          "url": "https://finnhub.io/api/news?id=e9b9121a80b62a37bf6f609edba82f8cb34df268686bad1d4b6f097e8adfbf80"
+        },
+        {
+          "headline": "TTEC Stock Should Be on Your Radar as the Little-Known Company Quietly Builds Something Rivals Will Struggle to Copy",
+          "source": "Yahoo",
+          "url": "https://finnhub.io/api/news?id=b3850e8e6c058625d2d07804cf97ca8fec1179999dee55ff83f2d732616e3d3c"
+        }
+      ],
+      "summary": "Gemini summary unavailable (likely quota/rate limit).\n- Price snapshot: 421.92 (3.05% vs prev close)\n- New items: 5\n- 1. A quarter of recent layoffs has been attributed to AI (Yahoo)\n- 2. OneStream (OS) Valuation Check After Expanded Microsoft AI Partnership News (Yahoo)\n- 3. Bill Ackman discloses new $2.09 billion stake in megacap tech stock (Yahoo)\n- Impact: review headlines manually; short-term volatility possible.\n- Technical note: Gemini cooldown active after rate limit",
+      "alertsToday": [
+        {
+          "time": "2026-05-17T05:30:21.167Z",
+          "from": 409.43,
+          "to": 421.92,
+          "changePct": 3.05
+        }
+      ]
     },
     "TSLA": {
-      "quote": { "current": null, "previousClose": null, "dayChangePct": 0 },
-      "newHeadlines": [],
-      "summary": "Waiting for first tracker run.",
-      "alertsToday": [],
-      "endOfDay": "Not generated yet."
+      "quote": {
+        "current": 422.24,
+        "previousClose": 443.3,
+        "dayChangePct": -4.75
+      },
+      "newHeadlines": [
+        {
+          "headline": "Elon Musk Says If We Don't Do Something About Corruption And Waste, 'The Ship Of America Is Going To Sink' —And We're All Going Down With It",
+          "source": "Yahoo",
+          "url": "https://finnhub.io/api/news?id=b1c496f52d0289615f343f0a5489a30fdaae06cdd007976fe95de1b5105d4b41"
+        },
+        {
+          "headline": "Elon Musk, Chip Giant?",
+          "source": "Yahoo",
+          "url": "https://finnhub.io/api/news?id=0df70afa3968bd4847dfb1044ca1a57150dc65b44882265dddef5a0bb320adc9"
+        },
+        {
+          "headline": "A Long-Term Investor Says They Feel 'A Weird Mix Of Jealousy, FOMO, And Frustration' Watching People Around Them Make Fast Money On Options",
+          "source": "Yahoo",
+          "url": "https://finnhub.io/api/news?id=41c45502864c9abbde37b338f47558cf33bf30f4990d97a02e5a27ddcceb3bd9"
+        },
+        {
+          "headline": "Peter Navarro Once Slammed Tesla Over China Reliance—Now Xi Jinping Says Beijing Will Open Wider To US Companies Amid Trump Visit",
+          "source": "Yahoo",
+          "url": "https://finnhub.io/api/news?id=4d780fd1bb3d590bc894c569b0cc00af81bb392438629208e3e30a67626b3811"
+        },
+        {
+          "headline": "Wall Street Saturday: Shorting Consumer Stocks With George Noble",
+          "source": "SeekingAlpha",
+          "url": "https://finnhub.io/api/news?id=d2d3d54c5542cf0d7e56a6f898f396c50cf806eeb1416d56fa9250f0e469d7fc"
+        }
+      ],
+      "summary": "Gemini summary unavailable (likely quota/rate limit).\n- Price snapshot: 422.24 (-4.75% vs prev close)\n- New items: 5\n- 1. Elon Musk Says If We Don't Do Something About Corruption And Waste, 'The Ship Of America Is Going To Sink' —And We're All Going Down With It (Yahoo)\n- 2. Elon Musk, Chip Giant? (Yahoo)\n- 3. A Long-Term Investor Says They Feel 'A Weird Mix Of Jealousy, FOMO, And Frustration' Watching People Around Them Make Fast Money On Options (Yahoo)\n- Impact: review headlines manually; short-term volatility possible.\n- Technical note: Gemini cooldown active after rate limit",
+      "alertsToday": [
+        {
+          "time": "2026-05-17T05:30:21.290Z",
+          "from": 443.3,
+          "to": 422.24,
+          "changePct": -4.75
+        }
+      ]
     }
   }
 }
