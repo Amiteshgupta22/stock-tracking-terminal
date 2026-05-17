@@ -16,6 +16,12 @@ jobs:
   run-tracker:
     runs-on: ubuntu-latest
     steps:
+      - name: Workflow version (must be v2)
+        run: |
+          echo "Workflow v2 — publishes via GitHub API (no git stash)"
+          echo "If you see 'git stash' errors, you re-ran an OLD failed job."
+          echo "Use Actions → Stock Tracker Scheduler → Run workflow instead."
+
       - name: Checkout
         uses: actions/checkout@v4
         with:

@@ -62,7 +62,18 @@ The workflow file is `.github/workflows/tracker.yml`.
 3. Enable Actions
 4. (Optional) Enable GitHub Pages and serve from branch root
 
-Workflow runs every 15 minutes and also supports manual run (`workflow_dispatch`).
+Workflow runs once per day (16:00 UTC) and supports manual run (`workflow_dispatch`).
+
+Live dashboard: https://amiteshgupta22.github.io/stock-tracking-terminal/
+
+### Actions troubleshooting
+
+If you see errors like `git stash`, `dashboard-data`, or merge conflict on `latest.json`:
+
+- That is from an **old failed run** (workflow v1).
+- **Do not click "Re-run failed jobs"** on red runs — GitHub re-executes the old broken script.
+- Instead: **Actions → Stock Tracker Scheduler → Run workflow** (top right).
+- A correct run shows step **"Publish dashboard data"** and log line `Workflow v2`.
 
 ## Config Options
 
