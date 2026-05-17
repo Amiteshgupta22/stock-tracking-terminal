@@ -15,6 +15,12 @@ jobs:
       - name: Checkout
         uses: actions/checkout@v4
 
+      - name: Restore tracker cache
+        uses: actions/cache@v4
+        with:
+          path: .tracker-cache.json
+          key: tracker-cache-${{ github.repository }}
+
       - name: Setup Node
         uses: actions/setup-node@v4
         with:
@@ -26,7 +32,8 @@ jobs:
           GEMINI_API_KEY: ${{ secrets.GEMINI_API_KEY }}
         run: |
           if [ -z "$FINNHUB_KEY" ]; then
-            echo "::error::FINNHUB_KEY secret is missing or empty. Set it in Settings > Secrets and variables > Actions."
+            echo "::error::FINNHUB_KEY secret is missing or empty."
+            echo "::error::Go to Settings > Secrets and variables > Actions and set FINNHUB_KEY to your Finnhub API key."
             exit 1
           fi
           echo "FINNHUB_KEY is configured."
@@ -44,10 +51,10 @@ jobs:
           npm install
           npm run run-once
 
-      - name: Commit updated data
+      - name: Commit updated dashboard data
         run: |
-          if [ -n "$(git status --porcelain public/data/latest.json .tracker-cache.json 2>/dev/null)" ]; then
-            git add public/data/latest.json .tracker-cache.json
+          if [ -n "$(git status --porcelain public/data/latest.json 2>/dev/null)" ]; then
+            git add public/data/latest.json
             git -c user.name="github-actions[bot]" -c user.email="41898282+github-actions[bot]@users.noreply.github.com" commit -m "chore: update stock tracker data"
             git push
           else
