@@ -20,12 +20,28 @@ jobs:
         with:
           node-version: "20"
 
+      - name: Validate secrets
+        env:
+          FINNHUB_KEY: ${{ secrets.FINNHUB_KEY }}
+          GEMINI_API_KEY: ${{ secrets.GEMINI_API_KEY }}
+        run: |
+          if [ -z "$FINNHUB_KEY" ]; then
+            echo "::error::FINNHUB_KEY secret is missing or empty. Set it in Settings > Secrets and variables > Actions."
+            exit 1
+          fi
+          echo "FINNHUB_KEY is configured."
+          if [ -z "$GEMINI_API_KEY" ]; then
+            echo "::warning::GEMINI_API_KEY not set; tracker will use fallback summaries."
+          else
+            echo "GEMINI_API_KEY is configured."
+          fi
+
       - name: Run tracker once
         env:
           FINNHUB_KEY: ${{ secrets.FINNHUB_KEY }}
           GEMINI_API_KEY: ${{ secrets.GEMINI_API_KEY }}
         run: |
-          npm ci || npm install
+          npm install
           npm run run-once
 
       - name: Commit updated data

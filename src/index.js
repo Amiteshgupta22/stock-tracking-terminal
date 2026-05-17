@@ -45,7 +45,7 @@ async function loadConfig() {
     throw new Error("Missing FINNHUB_KEY environment variable.");
   }
   if (!process.env.GEMINI_API_KEY) {
-    throw new Error("Missing GEMINI_API_KEY environment variable.");
+    logLine("GEMINI_API_KEY not set; using fallback summaries only.");
   }
   return {
     symbols: config.symbols.map((s) => String(s).toUpperCase().trim()),
@@ -110,6 +110,9 @@ async function getNews(symbol, maxItems) {
 }
 
 async function askGemini(prompt) {
+  if (!process.env.GEMINI_API_KEY) {
+    throw new Error("GEMINI_API_KEY not configured");
+  }
   if (Date.now() < geminiCooldownUntil) {
     throw new Error("Gemini cooldown active after rate limit");
   }
