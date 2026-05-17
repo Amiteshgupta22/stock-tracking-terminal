@@ -5,6 +5,10 @@ on:
     - cron: "0 16 * * *"
   workflow_dispatch:
 
+concurrency:
+  group: stock-tracker-${{ github.repository }}
+  cancel-in-progress: false
+
 permissions:
   contents: write
 
@@ -14,6 +18,8 @@ jobs:
     steps:
       - name: Checkout
         uses: actions/checkout@v4
+        with:
+          fetch-depth: 0
 
       - name: Restore tracker cache
         uses: actions/cache@v4
@@ -53,10 +59,34 @@ jobs:
 
       - name: Commit updated dashboard data
         run: |
-          if [ -n "$(git status --porcelain public/data/latest.json 2>/dev/null)" ]; then
-            git add public/data/latest.json
-            git -c user.name="github-actions[bot]" -c user.email="41898282+github-actions[bot]@users.noreply.github.com" commit -m "chore: update stock tracker data"
-            git push
-          else
+          git config user.name "github-actions[bot]"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+
+          if [ -z "$(git status --porcelain public/data/latest.json)" ]; then
             echo "No changes to commit"
+            exit 0
           fi
+
+          git stash push -m "dashboard-data" -- public/data/latest.json
+          git pull --rebase origin master
+          git stash pop
+
+          if [ -z "$(git status --porcelain public/data/latest.json)" ]; then
+            echo "No changes after syncing with remote"
+            exit 0
+          fi
+
+          git add public/data/latest.json
+          git commit -m "chore: update stock tracker data"
+
+          for attempt in 1 2 3; do
+            if git pull --rebase origin master && git push origin HEAD:master; then
+              echo "Push succeeded on attempt $attempt"
+              exit 0
+            fi
+            echo "Push failed on attempt $attempt, retrying..."
+            sleep 3
+          done
+
+          echo "::error::Failed to push dashboard data after 3 attempts"
+          exit 1
