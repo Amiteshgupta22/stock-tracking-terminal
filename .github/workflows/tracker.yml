@@ -57,50 +57,38 @@ jobs:
           npm install
           npm run run-once
 
-      - name: Commit updated dashboard data
+      - name: Publish dashboard data
+        env:
+          GH_TOKEN: ${{ github.token }}
         run: |
-          git config user.name "github-actions[bot]"
-          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
-
           if [ ! -f public/data/latest.json ]; then
-            echo "No latest.json generated; skipping commit"
+            echo "No latest.json generated; skipping publish"
             exit 0
           fi
 
-          # Keep generated data aside; sync repo to remote without stash/rebase conflicts.
-          cp public/data/latest.json /tmp/latest.json.new
-          git fetch origin master
-          git reset --hard origin/master
-          mkdir -p public/data
-          cp /tmp/latest.json.new public/data/latest.json
-
-          if git diff --quiet HEAD -- public/data/latest.json; then
-            echo "Dashboard data unchanged vs remote"
-            exit 0
-          fi
-
-          git add public/data/latest.json
-          git commit -m "chore: update stock tracker data"
-
+          # Update a single file via GitHub API (no git stash/merge/rebase conflicts).
           for attempt in 1 2 3; do
-            if git push origin HEAD:master; then
-              echo "Push succeeded on attempt $attempt"
+            SHA=""
+            SHA=$(gh api "repos/${GITHUB_REPOSITORY}/contents/public/data/latest.json" -q .sha 2>/dev/null || true)
+
+            ARGS=(
+              --method PUT
+              -f message="chore: update stock tracker data"
+              -f content="$(base64 -w 0 public/data/latest.json)"
+              -f branch=master
+            )
+            if [ -n "$SHA" ]; then
+              ARGS+=(-f "sha=${SHA}")
+            fi
+
+            if gh api "repos/${GITHUB_REPOSITORY}/contents/public/data/latest.json" "${ARGS[@]}"; then
+              echo "Published latest.json on attempt ${attempt}"
               exit 0
             fi
 
-            echo "Push rejected; rebasing on latest master (attempt $attempt)..."
-            git fetch origin master
-            if ! git rebase origin/master; then
-              cp /tmp/latest.json.new public/data/latest.json
-              git add public/data/latest.json
-              git rebase --abort 2>/dev/null || true
-              git reset --hard origin/master
-              cp /tmp/latest.json.new public/data/latest.json
-              git add public/data/latest.json
-              git commit -m "chore: update stock tracker data"
-            fi
+            echo "Publish failed on attempt ${attempt}, retrying..."
             sleep 2
           done
 
-          echo "::error::Failed to push dashboard data after 3 attempts"
+          echo "::error::Failed to publish latest.json after 3 attempts"
           exit 1
