@@ -469,6 +469,23 @@
         `;
       }
 
+      function mergeSymbolData(data) {
+        const merged = { ...(data.symbols || {}) };
+        for (const [sym, label] of Object.entries(data.symbolLabels || {})) {
+          if (!merged[sym]) {
+            merged[sym] = {
+              label,
+              quote: { current: null, previousClose: null, dayChangePct: 0 },
+              newHeadlines: [],
+              summary: "Waiting for tracker data…",
+            };
+          } else if (!merged[sym].label) {
+            merged[sym].label = label;
+          }
+        }
+        return merged;
+      }
+
       async function load() {
         const meta = document.getElementById("meta");
         const featured = document.getElementById("featured");
@@ -479,7 +496,7 @@
           if (!res.ok) throw new Error("No latest.json found yet. Run the tracker workflow first.");
 
           const data = await res.json();
-          const symbols = data.symbols || {};
+          const symbols = mergeSymbolData(data);
           const updated = data.generatedAt
             ? new Date(data.generatedAt).toLocaleString("en-IN", { dateStyle: "medium", timeStyle: "short" })
             : "unknown";

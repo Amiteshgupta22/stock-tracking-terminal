@@ -83,21 +83,59 @@ async function saveLatestSnapshot(snapshot) {
   await fs.writeFile(OUTPUT_PATH, JSON.stringify(snapshot, null, 2), "utf-8");
 }
 
+function isIndianSymbol(symbol) {
+  return symbol.endsWith(".NS") || symbol.endsWith(".BO");
+}
+
 async function fetchJson(url) {
-  const res = await fetch(url);
+  const res = await fetch(url, {
+    headers: {
+      "User-Agent": "stock-tracking-terminal/1.0",
+    },
+  });
   if (!res.ok) {
-    throw new Error(`HTTP ${res.status} for ${url}`);
+    throw new Error(`HTTP ${res.status}`);
   }
   return res.json();
 }
 
-async function getQuote(symbol) {
+async function getQuoteYahoo(symbol) {
+  const url = `https://query1.finance.yahoo.com/v8/finance/chart/${encodeURIComponent(symbol)}?interval=1d&range=5d`;
+  const data = await fetchJson(url);
+  const meta = data?.chart?.result?.[0]?.meta;
+  if (!meta?.regularMarketPrice) {
+    throw new Error(`No Yahoo quote for ${symbol}`);
+  }
+  return {
+    current: Number(meta.regularMarketPrice),
+    previousClose: Number(
+      meta.chartPreviousClose ?? meta.previousClose ?? meta.regularMarketPrice
+    ),
+    source: "yahoo",
+  };
+}
+
+async function getQuoteFinnhub(symbol) {
   const url = `https://finnhub.io/api/v1/quote?symbol=${encodeURIComponent(symbol)}&token=${process.env.FINNHUB_KEY}`;
   const data = await fetchJson(url);
   return {
     current: Number(data.c ?? 0),
     previousClose: Number(data.pc ?? 0),
+    source: "finnhub",
   };
+}
+
+async function getQuote(symbol) {
+  if (isIndianSymbol(symbol)) {
+    return getQuoteYahoo(symbol);
+  }
+
+  try {
+    return await getQuoteFinnhub(symbol);
+  } catch (err) {
+    logLine(`Finnhub quote failed for ${symbol}, trying Yahoo: ${err.message}`);
+    return getQuoteYahoo(symbol);
+  }
 }
 
 function dateDaysAgo(days) {
@@ -107,11 +145,20 @@ function dateDaysAgo(days) {
 }
 
 async function getNews(symbol, maxItems) {
+  if (isIndianSymbol(symbol)) {
+    return [];
+  }
+
   const from = dateDaysAgo(1);
   const to = localDateKey();
   const url = `https://finnhub.io/api/v1/company-news?symbol=${encodeURIComponent(symbol)}&from=${from}&to=${to}&token=${process.env.FINNHUB_KEY}`;
-  const rows = await fetchJson(url);
-  return (Array.isArray(rows) ? rows : []).slice(0, maxItems);
+  try {
+    const rows = await fetchJson(url);
+    return (Array.isArray(rows) ? rows : []).slice(0, maxItems);
+  } catch (err) {
+    logLine(`News unavailable for ${symbol}: ${err.message}`);
+    return [];
+  }
 }
 
 async function askGemini(prompt) {
@@ -312,8 +359,11 @@ async function runTracker() {
             dayChangePct: Number(dayPct.toFixed(2)),
           },
           newHeadlines: [],
-          summary: null,
+          summary: isIndianSymbol(symbol)
+            ? `Price via Yahoo Finance. NSE news needs Finnhub premium; tracking price + daily move.`
+            : null,
           alertsToday: cache.dayData[symbol].priceEvents,
+          dataSource: quote.source ?? "unknown",
         };
 
         const articles = await getNews(symbol, config.maxNewsPerSymbolPerPoll);
@@ -344,6 +394,15 @@ async function runTracker() {
         }
       } catch (err) {
         logLine(`Error on ${symbol}: ${err.message}`);
+        snapshot.symbols[symbol] = {
+          label: config.symbolLabels[symbol] || symbol,
+          quote: { current: null, previousClose: null, dayChangePct: 0 },
+          newHeadlines: [],
+          summary: `Could not load data: ${err.message}`,
+          alertsToday: cache.dayData[symbol]?.priceEvents ?? [],
+          endOfDay: null,
+          error: err.message,
+        };
       }
     }
 
