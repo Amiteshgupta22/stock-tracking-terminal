@@ -47,8 +47,13 @@ async function loadConfig() {
   if (!process.env.GEMINI_API_KEY) {
     logLine("GEMINI_API_KEY not set; using fallback summaries only.");
   }
+  const symbols = config.symbols.map((s) => String(s).toUpperCase().trim());
+  const symbolLabels = config.symbolLabels ?? {};
   return {
-    symbols: config.symbols.map((s) => String(s).toUpperCase().trim()),
+    symbols,
+    symbolLabels: Object.fromEntries(
+      symbols.map((s) => [s, symbolLabels[s] || s.replace(/\.NS$/, "").replace(/\.BO$/, "")])
+    ),
     pollIntervalMinutes: Number(config.pollIntervalMinutes ?? 5),
     suddenMovePercent: Number(config.suddenMovePercent ?? 2),
     endOfDayLocalTime: String(config.endOfDayLocalTime ?? "16:00"),
@@ -267,6 +272,8 @@ async function runTracker() {
   const tick = async () => {
     const snapshot = {
       generatedAt: nowIso(),
+      market: "India (NSE)",
+      symbolLabels: config.symbolLabels,
       symbols: {},
     };
 
@@ -298,6 +305,7 @@ async function runTracker() {
 
         cache.lastPrices[symbol] = quote.current;
         snapshot.symbols[symbol] = {
+          label: config.symbolLabels[symbol] || symbol,
           quote: {
             current: quote.current,
             previousClose: quote.previousClose,

@@ -3,53 +3,512 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Stock Tracking Dashboard</title>
+    <meta name="theme-color" content="#0c1222" />
+    <title>India Stock Tracker</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=DM+Sans:ital,opsz,wght@0,9..40,400;0,9..40,500;0,9..40,600;0,9..40,700;1,9..40,400&family=JetBrains+Mono:wght@500&display=swap"
+      rel="stylesheet"
+    />
     <style>
-      body { font-family: Arial, sans-serif; margin: 0; padding: 16px; background: #0f172a; color: #e2e8f0; }
-      h1 { margin-top: 0; }
-      .meta { color: #94a3b8; margin-bottom: 16px; }
-      .grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); gap: 12px; }
-      .card { background: #1e293b; border: 1px solid #334155; border-radius: 8px; padding: 12px; }
-      .symbol { font-size: 20px; margin: 0 0 6px; }
-      .summary { white-space: pre-wrap; font-size: 13px; line-height: 1.4; }
-      a { color: #7dd3fc; }
+      :root {
+        --bg: #0c1222;
+        --surface: #151d32;
+        --surface2: #1c2744;
+        --border: rgba(148, 163, 184, 0.12);
+        --text: #f1f5f9;
+        --muted: #94a3b8;
+        --accent: #f59e0b;
+        --accent2: #22d3ee;
+        --up: #34d399;
+        --down: #f87171;
+        --silver: linear-gradient(135deg, #94a3b8 0%, #e2e8f0 40%, #64748b 100%);
+        --radius: 16px;
+        --shadow: 0 8px 32px rgba(0, 0, 0, 0.35);
+      }
+
+      * {
+        box-sizing: border-box;
+      }
+
+      body {
+        margin: 0;
+        min-height: 100vh;
+        font-family: "DM Sans", system-ui, sans-serif;
+        color: var(--text);
+        background:
+          radial-gradient(ellipse 80% 50% at 50% -20%, rgba(245, 158, 11, 0.15), transparent),
+          radial-gradient(ellipse 60% 40% at 100% 0%, rgba(34, 211, 238, 0.08), transparent),
+          var(--bg);
+      }
+
+      .wrap {
+        max-width: 1200px;
+        margin: 0 auto;
+        padding: 20px 16px 48px;
+      }
+
+      header {
+        display: flex;
+        flex-wrap: wrap;
+        align-items: flex-end;
+        justify-content: space-between;
+        gap: 16px;
+        margin-bottom: 28px;
+      }
+
+      .brand h1 {
+        margin: 0;
+        font-size: clamp(1.5rem, 4vw, 2rem);
+        font-weight: 700;
+        letter-spacing: -0.02em;
+      }
+
+      .brand p {
+        margin: 6px 0 0;
+        color: var(--muted);
+        font-size: 0.95rem;
+      }
+
+      .badge {
+        display: inline-flex;
+        align-items: center;
+        gap: 6px;
+        padding: 4px 10px;
+        border-radius: 999px;
+        background: rgba(245, 158, 11, 0.15);
+        color: var(--accent);
+        font-size: 0.75rem;
+        font-weight: 600;
+        margin-bottom: 8px;
+      }
+
+      .toolbar {
+        display: flex;
+        flex-wrap: wrap;
+        gap: 10px;
+        align-items: center;
+      }
+
+      .meta {
+        font-size: 0.8rem;
+        color: var(--muted);
+        font-family: "JetBrains Mono", monospace;
+      }
+
+      button.refresh {
+        border: 1px solid var(--border);
+        background: var(--surface2);
+        color: var(--text);
+        padding: 10px 16px;
+        border-radius: 10px;
+        font-family: inherit;
+        font-weight: 600;
+        cursor: pointer;
+        transition: background 0.2s, transform 0.15s;
+      }
+
+      button.refresh:hover {
+        background: #243352;
+      }
+
+      button.refresh:active {
+        transform: scale(0.98);
+      }
+
+      .stats {
+        display: grid;
+        grid-template-columns: repeat(auto-fit, minmax(140px, 1fr));
+        gap: 12px;
+        margin-bottom: 28px;
+      }
+
+      .stat {
+        background: var(--surface);
+        border: 1px solid var(--border);
+        border-radius: var(--radius);
+        padding: 16px;
+        box-shadow: var(--shadow);
+      }
+
+      .stat span {
+        display: block;
+        font-size: 0.75rem;
+        color: var(--muted);
+        text-transform: uppercase;
+        letter-spacing: 0.06em;
+        margin-bottom: 4px;
+      }
+
+      .stat strong {
+        font-size: 1.35rem;
+        font-weight: 700;
+      }
+
+      .section-title {
+        font-size: 0.85rem;
+        font-weight: 600;
+        text-transform: uppercase;
+        letter-spacing: 0.1em;
+        color: var(--muted);
+        margin: 0 0 14px;
+        display: flex;
+        align-items: center;
+        gap: 8px;
+      }
+
+      .section-title::after {
+        content: "";
+        flex: 1;
+        height: 1px;
+        background: var(--border);
+      }
+
+      .featured {
+        margin-bottom: 28px;
+      }
+
+      .card {
+        background: var(--surface);
+        border: 1px solid var(--border);
+        border-radius: var(--radius);
+        padding: 18px;
+        box-shadow: var(--shadow);
+        transition: border-color 0.2s, transform 0.2s;
+      }
+
+      .card:hover {
+        border-color: rgba(245, 158, 11, 0.25);
+        transform: translateY(-2px);
+      }
+
+      .card.featured-card {
+        background: linear-gradient(145deg, #1a2238 0%, #121a2e 100%);
+        border-color: rgba(148, 163, 184, 0.25);
+        position: relative;
+        overflow: hidden;
+      }
+
+      .card.featured-card::before {
+        content: "";
+        position: absolute;
+        top: 0;
+        right: 0;
+        width: 120px;
+        height: 120px;
+        background: radial-gradient(circle, rgba(226, 232, 240, 0.12), transparent 70%);
+        pointer-events: none;
+      }
+
+      .card-header {
+        display: flex;
+        justify-content: space-between;
+        align-items: flex-start;
+        gap: 12px;
+        margin-bottom: 12px;
+      }
+
+      .ticker {
+        font-family: "JetBrains Mono", monospace;
+        font-size: 0.75rem;
+        color: var(--accent2);
+        margin-bottom: 4px;
+      }
+
+      .name {
+        margin: 0;
+        font-size: 1.1rem;
+        font-weight: 600;
+        line-height: 1.3;
+      }
+
+      .price-block {
+        text-align: right;
+      }
+
+      .price {
+        font-size: 1.5rem;
+        font-weight: 700;
+        font-family: "JetBrains Mono", monospace;
+      }
+
+      .change {
+        display: inline-block;
+        margin-top: 4px;
+        padding: 3px 8px;
+        border-radius: 6px;
+        font-size: 0.8rem;
+        font-weight: 600;
+        font-family: "JetBrains Mono", monospace;
+      }
+
+      .change.up {
+        background: rgba(52, 211, 153, 0.15);
+        color: var(--up);
+      }
+
+      .change.down {
+        background: rgba(248, 113, 113, 0.15);
+        color: var(--down);
+      }
+
+      .change.flat {
+        background: rgba(148, 163, 184, 0.15);
+        color: var(--muted);
+      }
+
+      .grid {
+        display: grid;
+        grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+        gap: 16px;
+        margin-bottom: 32px;
+      }
+
+      .card h3 {
+        margin: 14px 0 8px;
+        font-size: 0.72rem;
+        text-transform: uppercase;
+        letter-spacing: 0.08em;
+        color: var(--muted);
+        font-weight: 600;
+      }
+
+      .card ul {
+        margin: 0;
+        padding-left: 18px;
+        font-size: 0.88rem;
+        line-height: 1.5;
+      }
+
+      .card li {
+        margin-bottom: 6px;
+      }
+
+      .summary {
+        white-space: pre-wrap;
+        font-size: 0.86rem;
+        line-height: 1.55;
+        color: #cbd5e1;
+        max-height: 140px;
+        overflow-y: auto;
+      }
+
+      a {
+        color: var(--accent2);
+        text-decoration: none;
+      }
+
+      a:hover {
+        text-decoration: underline;
+      }
+
+      .alert-pill {
+        display: inline-block;
+        font-size: 0.7rem;
+        padding: 2px 8px;
+        border-radius: 999px;
+        background: rgba(248, 113, 113, 0.2);
+        color: var(--down);
+        margin-top: 8px;
+      }
+
+      .loading,
+      .error {
+        text-align: center;
+        padding: 48px 20px;
+        color: var(--muted);
+      }
+
+      .error {
+        color: var(--down);
+      }
+
+      .skeleton {
+        height: 180px;
+        border-radius: var(--radius);
+        background: linear-gradient(
+          90deg,
+          var(--surface) 25%,
+          var(--surface2) 50%,
+          var(--surface) 75%
+        );
+        background-size: 200% 100%;
+        animation: shimmer 1.2s infinite;
+      }
+
+      @keyframes shimmer {
+        0% {
+          background-position: 200% 0;
+        }
+        100% {
+          background-position: -200% 0;
+        }
+      }
+
+      @media (max-width: 480px) {
+        .card-header {
+          flex-direction: column;
+        }
+        .price-block {
+          text-align: left;
+        }
+      }
     </style>
   </head>
   <body>
-    <h1>Stock Tracking Dashboard</h1>
-    <div id="meta" class="meta">Loading...</div>
-    <div id="cards" class="grid"></div>
+    <div class="wrap">
+      <header>
+        <div class="brand">
+          <div class="badge">🇮🇳 NSE · Daily tracker</div>
+          <h1>India Stock Tracker</h1>
+          <p>Silver + top 10 large caps · news, moves &amp; EOD outlook</p>
+        </div>
+        <div class="toolbar">
+          <span id="meta" class="meta">Loading…</span>
+          <button type="button" class="refresh" id="refreshBtn">↻ Refresh</button>
+        </div>
+      </header>
+
+      <div id="stats" class="stats"></div>
+      <div id="featured" class="featured"></div>
+      <h2 class="section-title">Top 10 large caps</h2>
+      <div id="cards" class="grid">
+        <div class="skeleton"></div>
+        <div class="skeleton"></div>
+        <div class="skeleton"></div>
+      </div>
+    </div>
 
     <script>
-      async function load() {
-        const res = await fetch("./data/latest.json", { cache: "no-store" });
-        if (!res.ok) throw new Error("No latest.json found yet.");
-        const data = await res.json();
-        document.getElementById("meta").textContent = `Last update: ${data.generatedAt || "unknown"}`;
-        const root = document.getElementById("cards");
-        const symbols = data.symbols || {};
-        root.innerHTML = Object.entries(symbols).map(([symbol, details]) => {
-          const q = details.quote || {};
-          const headlines = (details.newHeadlines || [])
-            .slice(0, 3)
-            .map(h => `<li><a href="${h.url || "#"}" target="_blank" rel="noreferrer">${h.headline || "headline"}</a> (${h.source || "source"})</li>`)
-            .join("");
-          return `
-            <div class="card">
-              <h2 class="symbol">${symbol}</h2>
-              <div>Price: ${q.current ?? "-"} (${q.dayChangePct ?? 0}% vs prev close)</div>
-              <h3>New Headlines</h3>
-              <ul>${headlines || "<li>None this cycle.</li>"}</ul>
-              <h3>Summary</h3>
-              <div class="summary">${details.summary || "No summary this cycle."}</div>
-              <h3>End of Day</h3>
-              <div class="summary">${details.endOfDay || "Not generated yet."}</div>
-            </div>`;
-        }).join("");
+      const SILVER_SYMBOL = "SILVERBEES.NS";
+
+      function escapeHtml(text) {
+        return String(text ?? "")
+          .replace(/&/g, "&amp;")
+          .replace(/</g, "&lt;")
+          .replace(/>/g, "&gt;")
+          .replace(/"/g, "&quot;");
       }
-      load().catch((err) => {
-        document.getElementById("meta").textContent = err.message;
-      });
+
+      function formatPrice(value, symbol) {
+        if (value == null || Number.isNaN(value)) return "—";
+        const isIndia = symbol.includes(".NS") || symbol.includes(".BO");
+        const prefix = isIndia ? "₹" : "$";
+        return `${prefix}${Number(value).toLocaleString("en-IN", {
+          minimumFractionDigits: 2,
+          maximumFractionDigits: 2,
+        })}`;
+      }
+
+      function changeClass(pct) {
+        if (pct > 0) return "up";
+        if (pct < 0) return "down";
+        return "flat";
+      }
+
+      function formatChange(pct) {
+        const sign = pct > 0 ? "+" : "";
+        return `${sign}${Number(pct).toFixed(2)}%`;
+      }
+
+      function renderCard(symbol, details, featured = false) {
+        const q = details.quote || {};
+        const pct = q.dayChangePct ?? 0;
+        const label = details.label || symbol;
+        const headlines = (details.newHeadlines || [])
+          .slice(0, 3)
+          .map(
+            (h) =>
+              `<li><a href="${escapeHtml(h.url || "#")}" target="_blank" rel="noreferrer">${escapeHtml(h.headline || "Headline")}</a> <span style="color:var(--muted)">· ${escapeHtml(h.source || "source")}</span></li>`
+          )
+          .join("");
+
+        const alerts = (details.alertsToday || []).length;
+        const alertHtml = alerts
+          ? `<span class="alert-pill">${alerts} sudden move alert${alerts > 1 ? "s" : ""} today</span>`
+          : "";
+
+        return `
+          <article class="card${featured ? " featured-card" : ""}">
+            <div class="card-header">
+              <div>
+                <div class="ticker">${escapeHtml(symbol)}</div>
+                <h2 class="name">${escapeHtml(label)}</h2>
+              </div>
+              <div class="price-block">
+                <div class="price">${formatPrice(q.current, symbol)}</div>
+                <span class="change ${changeClass(pct)}">${formatChange(pct)}</span>
+              </div>
+            </div>
+            ${alertHtml}
+            <h3>Latest headlines</h3>
+            <ul>${headlines || "<li style='color:var(--muted)'>No new headlines this cycle.</li>"}</ul>
+            <h3>AI summary</h3>
+            <div class="summary">${escapeHtml(details.summary || "No summary this cycle.")}</div>
+            <h3>End of day</h3>
+            <div class="summary">${escapeHtml(details.endOfDay || "Not generated yet.")}</div>
+          </article>`;
+      }
+
+      function renderStats(symbols) {
+        const entries = Object.entries(symbols);
+        const valid = entries.filter(([, d]) => d.quote?.current != null);
+        const gainers = valid.filter(([, d]) => (d.quote?.dayChangePct ?? 0) > 0).length;
+        const losers = valid.filter(([, d]) => (d.quote?.dayChangePct ?? 0) < 0).length;
+        const avg =
+          valid.length > 0
+            ? valid.reduce((s, [, d]) => s + (d.quote?.dayChangePct ?? 0), 0) / valid.length
+            : 0;
+
+        document.getElementById("stats").innerHTML = `
+          <div class="stat"><span>Tracked</span><strong>${entries.length}</strong></div>
+          <div class="stat"><span>Gainers</span><strong style="color:var(--up)">${gainers}</strong></div>
+          <div class="stat"><span>Losers</span><strong style="color:var(--down)">${losers}</strong></div>
+          <div class="stat"><span>Avg change</span><strong class="change ${changeClass(avg)}">${formatChange(avg)}</strong></div>
+        `;
+      }
+
+      async function load() {
+        const meta = document.getElementById("meta");
+        const featured = document.getElementById("featured");
+        const cards = document.getElementById("cards");
+
+        try {
+          const res = await fetch("./data/latest.json", { cache: "no-store" });
+          if (!res.ok) throw new Error("No latest.json found yet. Run the tracker workflow first.");
+
+          const data = await res.json();
+          const symbols = data.symbols || {};
+          const updated = data.generatedAt
+            ? new Date(data.generatedAt).toLocaleString("en-IN", { dateStyle: "medium", timeStyle: "short" })
+            : "unknown";
+
+          meta.textContent = `Updated ${updated}${data.market ? ` · ${data.market}` : ""}`;
+
+          renderStats(symbols);
+
+          const silver = symbols[SILVER_SYMBOL];
+          if (silver) {
+            featured.innerHTML = `<h2 class="section-title">Silver</h2>${renderCard(SILVER_SYMBOL, silver, true)}`;
+          } else {
+            featured.innerHTML = "";
+          }
+
+          const rest = Object.entries(symbols).filter(([s]) => s !== SILVER_SYMBOL);
+          cards.innerHTML =
+            rest.map(([symbol, details]) => renderCard(symbol, details)).join("") ||
+            "<p class='loading'>No large-cap data yet.</p>";
+        } catch (err) {
+          meta.textContent = "";
+          featured.innerHTML = "";
+          cards.innerHTML = `<p class="error">${escapeHtml(err.message)}</p>`;
+        }
+      }
+
+      document.getElementById("refreshBtn").addEventListener("click", load);
+      load();
+      setInterval(load, 5 * 60 * 1000);
     </script>
   </body>
-  </html>
+</html>
