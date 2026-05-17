@@ -62,17 +62,20 @@ jobs:
           git config user.name "github-actions[bot]"
           git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
 
-          if [ -z "$(git status --porcelain public/data/latest.json)" ]; then
-            echo "No changes to commit"
+          if [ ! -f public/data/latest.json ]; then
+            echo "No latest.json generated; skipping commit"
             exit 0
           fi
 
-          git stash push -m "dashboard-data" -- public/data/latest.json
-          git pull --rebase origin master
-          git stash pop
+          # Keep generated data aside; sync repo to remote without stash/rebase conflicts.
+          cp public/data/latest.json /tmp/latest.json.new
+          git fetch origin master
+          git reset --hard origin/master
+          mkdir -p public/data
+          cp /tmp/latest.json.new public/data/latest.json
 
-          if [ -z "$(git status --porcelain public/data/latest.json)" ]; then
-            echo "No changes after syncing with remote"
+          if git diff --quiet HEAD -- public/data/latest.json; then
+            echo "Dashboard data unchanged vs remote"
             exit 0
           fi
 
@@ -80,12 +83,23 @@ jobs:
           git commit -m "chore: update stock tracker data"
 
           for attempt in 1 2 3; do
-            if git pull --rebase origin master && git push origin HEAD:master; then
+            if git push origin HEAD:master; then
               echo "Push succeeded on attempt $attempt"
               exit 0
             fi
-            echo "Push failed on attempt $attempt, retrying..."
-            sleep 3
+
+            echo "Push rejected; rebasing on latest master (attempt $attempt)..."
+            git fetch origin master
+            if ! git rebase origin/master; then
+              cp /tmp/latest.json.new public/data/latest.json
+              git add public/data/latest.json
+              git rebase --abort 2>/dev/null || true
+              git reset --hard origin/master
+              cp /tmp/latest.json.new public/data/latest.json
+              git add public/data/latest.json
+              git commit -m "chore: update stock tracker data"
+            fi
+            sleep 2
           done
 
           echo "::error::Failed to push dashboard data after 3 attempts"

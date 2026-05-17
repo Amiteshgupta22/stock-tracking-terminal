@@ -1,3 +1,4 @@
 node_modules/
 .env
 .tracker-cache.json
+package-lock.json
