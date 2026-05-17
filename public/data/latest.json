@@ -1,5 +1,5 @@
 {
-  "generatedAt": "2026-05-17T06:20:36.087Z",
+  "generatedAt": "2026-05-17T06:21:10.245Z",
   "market": "India (NSE)",
   "symbolLabels": {
     "SILVERBEES.NS": "Silver ETF (Nippon Silver BeES)",
@@ -14,5 +14,173 @@
     "BHARTIARTL.NS": "Bharti Airtel",
     "KOTAKBANK.NS": "Kotak Mahindra Bank"
   },
-  "symbols": {}
+  "symbols": {
+    "SILVERBEES.NS": {
+      "label": "Silver ETF (Nippon Silver BeES)",
+      "quote": {
+        "current": 249.85,
+        "previousClose": 241.29,
+        "dayChangePct": 3.55
+      },
+      "newHeadlines": [],
+      "summary": "Price via Yahoo Finance. NSE news needs Finnhub premium; tracking price + daily move.",
+      "alertsToday": [
+        {
+          "time": "2026-05-17T06:21:10.662Z",
+          "from": 241.29,
+          "to": 249.85,
+          "changePct": 3.55
+        }
+      ],
+      "dataSource": "yahoo"
+    },
+    "RELIANCE.NS": {
+      "label": "Reliance Industries",
+      "quote": {
+        "current": 1336.4,
+        "previousClose": 1388.2,
+        "dayChangePct": -3.73
+      },
+      "newHeadlines": [],
+      "summary": "Price via Yahoo Finance. NSE news needs Finnhub premium; tracking price + daily move.",
+      "alertsToday": [
+        {
+          "time": "2026-05-17T06:21:10.792Z",
+          "from": 1388.2,
+          "to": 1336.4,
+          "changePct": -3.73
+        }
+      ],
+      "dataSource": "yahoo"
+    },
+    "TCS.NS": {
+      "label": "Tata Consultancy Services",
+      "quote": {
+        "current": 2264,
+        "previousClose": 2392.9,
+        "dayChangePct": -5.39
+      },
+      "newHeadlines": [],
+      "summary": "Price via Yahoo Finance. NSE news needs Finnhub premium; tracking price + daily move.",
+      "alertsToday": [
+        {
+          "time": "2026-05-17T06:21:10.945Z",
+          "from": 2392.9,
+          "to": 2264,
+          "changePct": -5.39
+        }
+      ],
+      "dataSource": "yahoo"
+    },
+    "HDFCBANK.NS": {
+      "label": "HDFC Bank",
+      "quote": {
+        "current": 767.5,
+        "previousClose": 763.65,
+        "dayChangePct": 0.5
+      },
+      "newHeadlines": [],
+      "summary": "Price via Yahoo Finance. NSE news needs Finnhub premium; tracking price + daily move.",
+      "alertsToday": [],
+      "dataSource": "yahoo"
+    },
+    "INFY.NS": {
+      "label": "Infosys",
+      "quote": {
+        "current": 1119,
+        "previousClose": 1177,
+        "dayChangePct": -4.93
+      },
+      "newHeadlines": [],
+      "summary": "Price via Yahoo Finance. NSE news needs Finnhub premium; tracking price + daily move.",
+      "alertsToday": [
+        {
+          "time": "2026-05-17T06:21:11.146Z",
+          "from": 1177,
+          "to": 1119,
+          "changePct": -4.93
+        }
+      ],
+      "dataSource": "yahoo"
+    },
+    "ICICIBANK.NS": {
+      "label": "ICICI Bank",
+      "quote": {
+        "current": 1244.5,
+        "previousClose": 1266.4,
+        "dayChangePct": -1.73
+      },
+      "newHeadlines": [],
+      "summary": "Price via Yahoo Finance. NSE news needs Finnhub premium; tracking price + daily move.",
+      "alertsToday": [],
+      "dataSource": "yahoo"
+    },
+    "HINDUNILVR.NS": {
+      "label": "Hindustan Unilever",
+      "quote": {
+        "current": 2272.2,
+        "previousClose": 2307.2,
+        "dayChangePct": -1.52
+      },
+      "newHeadlines": [],
+      "summary": "Price via Yahoo Finance. NSE news needs Finnhub premium; tracking price + daily move.",
+      "alertsToday": [],
+      "dataSource": "yahoo"
+    },
+    "ITC.NS": {
+      "label": "ITC",
+      "quote": {
+        "current": 309.45,
+        "previousClose": 305.85,
+        "dayChangePct": 1.18
+      },
+      "newHeadlines": [],
+      "summary": "Price via Yahoo Finance. NSE news needs Finnhub premium; tracking price + daily move.",
+      "alertsToday": [],
+      "dataSource": "yahoo"
+    },
+    "SBIN.NS": {
+      "label": "State Bank of India",
+      "quote": {
+        "current": 963.2,
+        "previousClose": 973.6,
+        "dayChangePct": -1.07
+      },
+      "newHeadlines": [],
+      "summary": "Price via Yahoo Finance. NSE news needs Finnhub premium; tracking price + daily move.",
+      "alertsToday": [],
+      "dataSource": "yahoo"
+    },
+    "BHARTIARTL.NS": {
+      "label": "Bharti Airtel",
+      "quote": {
+        "current": 1905.4,
+        "previousClose": 1759.8,
+        "dayChangePct": 8.27
+      },
+      "newHeadlines": [],
+      "summary": "Price via Yahoo Finance. NSE news needs Finnhub premium; tracking price + daily move.",
+      "alertsToday": [
+        {
+          "time": "2026-05-17T06:21:11.611Z",
+          "from": 1759.8,
+          "to": 1905.4,
+          "changePct": 8.27
+        }
+      ],
+      "dataSource": "yahoo"
+    },
+    "KOTAKBANK.NS": {
+      "label": "Kotak Mahindra Bank",
+      "quote": {
+        "current": 387.05,
+        "previousClose": 381.05,
+        "dayChangePct": 1.57
+      },
+      "newHeadlines": [],
+      "summary": "Price via Yahoo Finance. NSE news needs Finnhub premium; tracking price + daily move.",
+      "alertsToday": [],
+      "dataSource": "yahoo"
+    }
+  }
 }
