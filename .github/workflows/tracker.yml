@@ -1,4 +1,4 @@
-name: Stock Tracker Scheduler
+name: Update Stock Dashboard (v2)
 
 on:
   schedule:
