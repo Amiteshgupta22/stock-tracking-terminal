@@ -98,3 +98,28 @@ jobs:
 
           echo "::error::Failed to publish latest.json after 3 attempts"
           exit 1
+
+      - name: Build email digest
+        run: node src/build-email.js
+
+      - name: Send email digest
+        uses: dawidd6/action-send-mail@v3
+        continue-on-error: true
+        with:
+          server_address: smtp.gmail.com
+          server_port: 465
+          secure: true
+          username: ${{ secrets.SMTP_USERNAME }}
+          password: ${{ secrets.SMTP_PASSWORD }}
+          subject: India Stock Tracker — Daily Update
+          to: ${{ secrets.NOTIFY_EMAIL }}
+          from: ${{ secrets.SMTP_USERNAME }}
+          html_body: digest.html
+          convert_markdown: false
+
+      - name: Email setup reminder
+        if: always()
+        run: |
+          if [ -z "${{ secrets.NOTIFY_EMAIL }}" ]; then
+            echo "::notice::No daily email — add NOTIFY_EMAIL, SMTP_USERNAME, SMTP_PASSWORD secrets to receive digest mail."
+          fi

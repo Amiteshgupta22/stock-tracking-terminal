@@ -66,6 +66,23 @@ Workflow runs once per day (16:00 UTC) and supports manual run (`workflow_dispat
 
 Live dashboard: https://amiteshgupta22.github.io/stock-tracking-terminal/
 
+## Email notifications (daily digest)
+
+The app does **not** email you by default. GitHub only emails you when a workflow **fails**, not when it succeeds.
+
+To get a **daily summary email** after each successful run, add these GitHub secrets  
+(Settings → Secrets and variables → Actions):
+
+| Secret | Example |
+|--------|---------|
+| `NOTIFY_EMAIL` | your@gmail.com (where you receive mail) |
+| `SMTP_USERNAME` | your@gmail.com (sender) |
+| `SMTP_PASSWORD` | Gmail **App Password** (not your normal password) |
+
+Gmail app password: Google Account → Security → 2-Step Verification → App passwords.
+
+After secrets are set, each successful workflow run sends one digest with prices and day % change.
+
 ### Actions troubleshooting
 
 If you see errors like `git stash`, `dashboard-data`, or merge conflict on `latest.json`:
