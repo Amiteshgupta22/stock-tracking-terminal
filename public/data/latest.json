@@ -1,5 +1,5 @@
 {
-  "generatedAt": "2026-06-23T17:51:48.908Z",
+  "generatedAt": "2026-06-24T17:52:37.510Z",
   "market": "India (NSE)",
   "symbolLabels": {
     "SILVERBEES.NS": "Silver ETF (Nippon Silver BeES)",
@@ -18,18 +18,18 @@
     "SILVERBEES.NS": {
       "label": "Silver ETF (Nippon Silver BeES)",
       "quote": {
-        "current": 215.06,
-        "previousClose": 234.67,
-        "dayChangePct": -8.36
+        "current": 213.35,
+        "previousClose": 229.99,
+        "dayChangePct": -7.24
       },
       "newHeadlines": [],
       "summary": "Price via Yahoo Finance. NSE news needs Finnhub premium; tracking price + daily move.",
       "alertsToday": [
         {
-          "time": "2026-06-23T17:51:49.081Z",
-          "from": 234.67,
-          "to": 215.06,
-          "changePct": -8.36
+          "time": "2026-06-24T17:52:37.630Z",
+          "from": 229.99,
+          "to": 213.35,
+          "changePct": -7.24
         }
       ],
       "dataSource": "yahoo",
@@ -38,9 +38,9 @@
     "RELIANCE.NS": {
       "label": "Reliance Industries",
       "quote": {
-        "current": 1309.5,
-        "previousClose": 1332.7,
-        "dayChangePct": -1.74
+        "current": 1313.6,
+        "previousClose": 1328.1,
+        "dayChangePct": -1.09
       },
       "newHeadlines": [],
       "summary": "Price via Yahoo Finance. NSE news needs Finnhub premium; tracking price + daily move.",
@@ -51,18 +51,18 @@
     "TCS.NS": {
       "label": "Tata Consultancy Services",
       "quote": {
-        "current": 2059.6,
-        "previousClose": 2223,
-        "dayChangePct": -7.35
+        "current": 2109,
+        "previousClose": 2203.3,
+        "dayChangePct": -4.28
       },
       "newHeadlines": [],
       "summary": "Price via Yahoo Finance. NSE news needs Finnhub premium; tracking price + daily move.",
       "alertsToday": [
         {
-          "time": "2026-06-23T17:51:49.229Z",
-          "from": 2223,
-          "to": 2059.6,
-          "changePct": -7.35
+          "time": "2026-06-24T17:52:37.923Z",
+          "from": 2203.3,
+          "to": 2109,
+          "changePct": -4.28
         }
       ],
       "dataSource": "yahoo",
@@ -71,9 +71,9 @@
     "HDFCBANK.NS": {
       "label": "HDFC Bank",
       "quote": {
-        "current": 774.65,
-        "previousClose": 787.1,
-        "dayChangePct": -1.58
+        "current": 793.2,
+        "previousClose": 799,
+        "dayChangePct": -0.73
       },
       "newHeadlines": [],
       "summary": "Price via Yahoo Finance. NSE news needs Finnhub premium; tracking price + daily move.",
@@ -84,18 +84,18 @@
     "INFY.NS": {
       "label": "Infosys",
       "quote": {
-        "current": 1029.3,
-        "previousClose": 1157.7,
-        "dayChangePct": -11.09
+        "current": 1056.6,
+        "previousClose": 1127.5,
+        "dayChangePct": -6.29
       },
       "newHeadlines": [],
       "summary": "Price via Yahoo Finance. NSE news needs Finnhub premium; tracking price + daily move.",
       "alertsToday": [
         {
-          "time": "2026-06-23T17:51:49.390Z",
-          "from": 1157.7,
-          "to": 1029.3,
-          "changePct": -11.09
+          "time": "2026-06-24T17:52:38.656Z",
+          "from": 1127.5,
+          "to": 1056.6,
+          "changePct": -6.29
         }
       ],
       "dataSource": "yahoo",
@@ -104,35 +104,49 @@
     "ICICIBANK.NS": {
       "label": "ICICI Bank",
       "quote": {
-        "current": 1338.3,
-        "previousClose": 1336.8,
-        "dayChangePct": 0.11
+        "current": 1373.6,
+        "previousClose": 1342.3,
+        "dayChangePct": 2.33
       },
       "newHeadlines": [],
       "summary": "Price via Yahoo Finance. NSE news needs Finnhub premium; tracking price + daily move.",
-      "alertsToday": [],
+      "alertsToday": [
+        {
+          "time": "2026-06-24T17:52:38.723Z",
+          "from": 1342.3,
+          "to": 1373.6,
+          "changePct": 2.33
+        }
+      ],
       "dataSource": "yahoo",
-      "endOfDay": "Gemini EOD analysis unavailable (likely quota/rate limit).\n- Day recap: 0 news events, 0 sudden move alerts.\n- Long-term implication: infer from repeated themes in headlines.\n- Risk factors: macro news, earnings guidance, regulation, liquidity.\n- Confidence: low (fallback mode).\n- Technical note: Gemini cooldown active after rate limit"
+      "endOfDay": "Gemini EOD analysis unavailable (likely quota/rate limit).\n- Day recap: 0 news events, 1 sudden move alerts.\n- Long-term implication: infer from repeated themes in headlines.\n- Risk factors: macro news, earnings guidance, regulation, liquidity.\n- Confidence: low (fallback mode).\n- Technical note: Gemini cooldown active after rate limit"
     },
     "HINDUNILVR.NS": {
       "label": "Hindustan Unilever",
       "quote": {
-        "current": 2160.1,
-        "previousClose": 2197.6,
-        "dayChangePct": -1.71
+        "current": 2157.8,
+        "previousClose": 2218.5,
+        "dayChangePct": -2.74
       },
       "newHeadlines": [],
       "summary": "Price via Yahoo Finance. NSE news needs Finnhub premium; tracking price + daily move.",
-      "alertsToday": [],
+      "alertsToday": [
+        {
+          "time": "2026-06-24T17:52:39.301Z",
+          "from": 2218.5,
+          "to": 2157.8,
+          "changePct": -2.74
+        }
+      ],
       "dataSource": "yahoo",
-      "endOfDay": "Gemini EOD analysis unavailable (likely quota/rate limit).\n- Day recap: 0 news events, 0 sudden move alerts.\n- Long-term implication: infer from repeated themes in headlines.\n- Risk factors: macro news, earnings guidance, regulation, liquidity.\n- Confidence: low (fallback mode).\n- Technical note: Gemini cooldown active after rate limit"
+      "endOfDay": "Gemini EOD analysis unavailable (likely quota/rate limit).\n- Day recap: 0 news events, 1 sudden move alerts.\n- Long-term implication: infer from repeated themes in headlines.\n- Risk factors: macro news, earnings guidance, regulation, liquidity.\n- Confidence: low (fallback mode).\n- Technical note: Gemini cooldown active after rate limit"
     },
     "ITC.NS": {
       "label": "ITC",
       "quote": {
-        "current": 290,
-        "previousClose": 290.75,
-        "dayChangePct": -0.26
+        "current": 290.35,
+        "previousClose": 291.15,
+        "dayChangePct": -0.27
       },
       "newHeadlines": [],
       "summary": "Price via Yahoo Finance. NSE news needs Finnhub premium; tracking price + daily move.",
@@ -143,9 +157,9 @@
     "SBIN.NS": {
       "label": "State Bank of India",
       "quote": {
-        "current": 1024.2,
-        "previousClose": 1026.5,
-        "dayChangePct": -0.22
+        "current": 1034.6,
+        "previousClose": 1042.7,
+        "dayChangePct": -0.78
       },
       "newHeadlines": [],
       "summary": "Price via Yahoo Finance. NSE news needs Finnhub premium; tracking price + daily move.",
@@ -156,9 +170,9 @@
     "BHARTIARTL.NS": {
       "label": "Bharti Airtel",
       "quote": {
-        "current": 1901.6,
-        "previousClose": 1875.7,
-        "dayChangePct": 1.38
+        "current": 1877.3,
+        "previousClose": 1874.8,
+        "dayChangePct": 0.13
       },
       "newHeadlines": [],
       "summary": "Price via Yahoo Finance. NSE news needs Finnhub premium; tracking price + daily move.",
@@ -169,9 +183,9 @@
     "KOTAKBANK.NS": {
       "label": "Kotak Mahindra Bank",
       "quote": {
-        "current": 401.65,
-        "previousClose": 404.5,
-        "dayChangePct": -0.7
+        "current": 405.95,
+        "previousClose": 402.95,
+        "dayChangePct": 0.74
       },
       "newHeadlines": [],
       "summary": "Price via Yahoo Finance. NSE news needs Finnhub premium; tracking price + daily move.",
