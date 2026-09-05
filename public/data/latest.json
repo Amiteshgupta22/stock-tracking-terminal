@@ -1,5 +1,5 @@
 {
-  "generatedAt": "2026-09-04T18:48:07.401Z",
+  "generatedAt": "2026-09-05T17:54:04.426Z",
   "market": "India (NSE)",
   "symbolLabels": {
     "SILVERBEES.NS": "Silver ETF (Nippon Silver BeES)",
@@ -18,9 +18,9 @@
     "SILVERBEES.NS": {
       "label": "Silver ETF (Nippon Silver BeES)",
       "quote": {
-        "current": 222.78,
+        "current": 222.75,
         "previousClose": 223.21,
-        "dayChangePct": -0.19
+        "dayChangePct": -0.21
       },
       "newHeadlines": [],
       "summary": "Price via Yahoo Finance. NSE news needs Finnhub premium; tracking price + daily move.",
@@ -39,7 +39,7 @@
       "summary": "Price via Yahoo Finance. NSE news needs Finnhub premium; tracking price + daily move.",
       "alertsToday": [
         {
-          "time": "2026-09-04T18:48:07.600Z",
+          "time": "2026-09-05T17:54:04.612Z",
           "from": 1277,
           "to": 1322,
           "changePct": 3.52
@@ -59,7 +59,7 @@
       "summary": "Price via Yahoo Finance. NSE news needs Finnhub premium; tracking price + daily move.",
       "alertsToday": [
         {
-          "time": "2026-09-04T18:48:07.654Z",
+          "time": "2026-09-05T17:54:04.669Z",
           "from": 2399.3,
           "to": 2304,
           "changePct": -3.97
@@ -105,7 +105,7 @@
       "summary": "Price via Yahoo Finance. NSE news needs Finnhub premium; tracking price + daily move.",
       "alertsToday": [
         {
-          "time": "2026-09-04T18:48:07.856Z",
+          "time": "2026-09-05T17:54:04.854Z",
           "from": 1454,
           "to": 1423.2,
           "changePct": -2.12
@@ -138,7 +138,7 @@
       "summary": "Price via Yahoo Finance. NSE news needs Finnhub premium; tracking price + daily move.",
       "alertsToday": [
         {
-          "time": "2026-09-04T18:48:07.987Z",
+          "time": "2026-09-05T17:54:04.979Z",
           "from": 255.5,
           "to": 264.1,
           "changePct": 3.37
@@ -158,7 +158,7 @@
       "summary": "Price via Yahoo Finance. NSE news needs Finnhub premium; tracking price + daily move.",
       "alertsToday": [
         {
-          "time": "2026-09-04T18:48:08.050Z",
+          "time": "2026-09-05T17:54:05.045Z",
           "from": 1060,
           "to": 1016.1,
           "changePct": -4.14
