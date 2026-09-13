@@ -1,5 +1,5 @@
 {
-  "generatedAt": "2026-09-12T18:05:00.506Z",
+  "generatedAt": "2026-09-13T18:31:40.457Z",
   "market": "India (NSE)",
   "symbolLabels": {
     "SILVERBEES.NS": "Silver ETF (Nippon Silver BeES)",
@@ -18,9 +18,9 @@
     "SILVERBEES.NS": {
       "label": "Silver ETF (Nippon Silver BeES)",
       "quote": {
-        "current": 216.72,
+        "current": 217.05,
         "previousClose": 219.96,
-        "dayChangePct": -1.47
+        "dayChangePct": -1.32
       },
       "newHeadlines": [],
       "summary": "Price via Yahoo Finance. NSE news needs Finnhub premium; tracking price + daily move.",
@@ -39,7 +39,7 @@
       "summary": "Price via Yahoo Finance. NSE news needs Finnhub premium; tracking price + daily move.",
       "alertsToday": [
         {
-          "time": "2026-09-12T18:05:00.742Z",
+          "time": "2026-09-13T18:31:40.648Z",
           "from": 1309.5,
           "to": 1257.5,
           "changePct": -3.97
@@ -59,7 +59,7 @@
       "summary": "Price via Yahoo Finance. NSE news needs Finnhub premium; tracking price + daily move.",
       "alertsToday": [
         {
-          "time": "2026-09-12T18:05:00.805Z",
+          "time": "2026-09-13T18:31:40.705Z",
           "from": 2270,
           "to": 2200.8,
           "changePct": -3.05
@@ -92,7 +92,7 @@
       "summary": "Price via Yahoo Finance. NSE news needs Finnhub premium; tracking price + daily move.",
       "alertsToday": [
         {
-          "time": "2026-09-12T18:05:00.947Z",
+          "time": "2026-09-13T18:31:40.841Z",
           "from": 1087.5,
           "to": 1037.7,
           "changePct": -4.58
@@ -112,7 +112,7 @@
       "summary": "Price via Yahoo Finance. NSE news needs Finnhub premium; tracking price + daily move.",
       "alertsToday": [
         {
-          "time": "2026-09-12T18:05:01.006Z",
+          "time": "2026-09-13T18:31:40.904Z",
           "from": 1427.5,
           "to": 1379.3,
           "changePct": -3.38
@@ -132,7 +132,7 @@
       "summary": "Price via Yahoo Finance. NSE news needs Finnhub premium; tracking price + daily move.",
       "alertsToday": [
         {
-          "time": "2026-09-12T18:05:01.084Z",
+          "time": "2026-09-13T18:31:40.959Z",
           "from": 1980,
           "to": 1927,
           "changePct": -2.68
