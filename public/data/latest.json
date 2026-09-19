@@ -1,5 +1,5 @@
 {
-  "generatedAt": "2026-09-18T18:51:37.865Z",
+  "generatedAt": "2026-09-19T18:24:37.473Z",
   "market": "India (NSE)",
   "symbolLabels": {
     "SILVERBEES.NS": "Silver ETF (Nippon Silver BeES)",
@@ -26,7 +26,7 @@
       "summary": "Price via Yahoo Finance. NSE news needs Finnhub premium; tracking price + daily move.",
       "alertsToday": [
         {
-          "time": "2026-09-18T18:51:38.122Z",
+          "time": "2026-09-19T18:24:37.592Z",
           "from": 216.72,
           "to": 224.07,
           "changePct": 3.39
@@ -46,7 +46,7 @@
       "summary": "Price via Yahoo Finance. NSE news needs Finnhub premium; tracking price + daily move.",
       "alertsToday": [
         {
-          "time": "2026-09-18T18:51:38.311Z",
+          "time": "2026-09-19T18:24:37.666Z",
           "from": 1257.5,
           "to": 1226.4,
           "changePct": -2.47
@@ -66,7 +66,7 @@
       "summary": "Price via Yahoo Finance. NSE news needs Finnhub premium; tracking price + daily move.",
       "alertsToday": [
         {
-          "time": "2026-09-18T18:51:38.486Z",
+          "time": "2026-09-19T18:24:37.718Z",
           "from": 2200.8,
           "to": 2105,
           "changePct": -4.35
@@ -86,7 +86,7 @@
       "summary": "Price via Yahoo Finance. NSE news needs Finnhub premium; tracking price + daily move.",
       "alertsToday": [
         {
-          "time": "2026-09-18T18:51:38.628Z",
+          "time": "2026-09-19T18:24:37.776Z",
           "from": 708.25,
           "to": 731,
           "changePct": 3.21
@@ -119,7 +119,7 @@
       "summary": "Price via Yahoo Finance. NSE news needs Finnhub premium; tracking price + daily move.",
       "alertsToday": [
         {
-          "time": "2026-09-18T18:51:38.966Z",
+          "time": "2026-09-19T18:24:37.882Z",
           "from": 1379.3,
           "to": 1338.9,
           "changePct": -2.93
@@ -178,7 +178,7 @@
       "summary": "Price via Yahoo Finance. NSE news needs Finnhub premium; tracking price + daily move.",
       "alertsToday": [
         {
-          "time": "2026-09-18T18:51:39.643Z",
+          "time": "2026-09-19T18:24:38.142Z",
           "from": 1831.1,
           "to": 1893.3,
           "changePct": 3.4
