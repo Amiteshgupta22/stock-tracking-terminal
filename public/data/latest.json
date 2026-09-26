@@ -1,5 +1,5 @@
 {
-  "generatedAt": "2026-09-25T19:48:54.226Z",
+  "generatedAt": "2026-09-26T18:59:20.702Z",
   "market": "India (NSE)",
   "symbolLabels": {
     "SILVERBEES.NS": "Silver ETF (Nippon Silver BeES)",
@@ -52,7 +52,7 @@
       "summary": "Price via Yahoo Finance. NSE news needs Finnhub premium; tracking price + daily move.",
       "alertsToday": [
         {
-          "time": "2026-09-25T19:48:54.615Z",
+          "time": "2026-09-26T18:59:20.975Z",
           "from": 2128.7,
           "to": 2082,
           "changePct": -2.19
@@ -85,7 +85,7 @@
       "summary": "Price via Yahoo Finance. NSE news needs Finnhub premium; tracking price + daily move.",
       "alertsToday": [
         {
-          "time": "2026-09-25T19:48:54.756Z",
+          "time": "2026-09-26T18:59:21.110Z",
           "from": 1038.5,
           "to": 1000.2,
           "changePct": -3.69
@@ -157,7 +157,7 @@
       "summary": "Price via Yahoo Finance. NSE news needs Finnhub premium; tracking price + daily move.",
       "alertsToday": [
         {
-          "time": "2026-09-25T19:48:55.152Z",
+          "time": "2026-09-26T18:59:21.376Z",
           "from": 1830.2,
           "to": 1785.4,
           "changePct": -2.45
@@ -177,7 +177,7 @@
       "summary": "Price via Yahoo Finance. NSE news needs Finnhub premium; tracking price + daily move.",
       "alertsToday": [
         {
-          "time": "2026-09-25T19:48:55.232Z",
+          "time": "2026-09-26T18:59:21.427Z",
           "from": 414.8,
           "to": 404,
           "changePct": -2.6
