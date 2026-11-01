@@ -1,5 +1,5 @@
 {
-  "generatedAt": "2026-10-31T19:42:39.072Z",
+  "generatedAt": "2026-11-01T20:09:25.826Z",
   "market": "India (NSE)",
   "symbolLabels": {
     "SILVERBEES.NS": "Silver ETF (Nippon Silver BeES)",
@@ -18,18 +18,18 @@
     "SILVERBEES.NS": {
       "label": "Silver ETF (Nippon Silver BeES)",
       "quote": {
-        "current": 173.34,
+        "current": 173.46,
         "previousClose": 184.51,
-        "dayChangePct": -6.05
+        "dayChangePct": -5.99
       },
       "newHeadlines": [],
       "summary": "Price via Yahoo Finance. NSE news needs Finnhub premium; tracking price + daily move.",
       "alertsToday": [
         {
-          "time": "2026-10-31T19:42:39.330Z",
+          "time": "2026-11-01T20:09:26.178Z",
           "from": 184.51,
-          "to": 173.34,
-          "changePct": -6.05
+          "to": 173.46,
+          "changePct": -5.99
         }
       ],
       "dataSource": "yahoo",
@@ -46,7 +46,7 @@
       "summary": "Price via Yahoo Finance. NSE news needs Finnhub premium; tracking price + daily move.",
       "alertsToday": [
         {
-          "time": "2026-10-31T19:42:39.505Z",
+          "time": "2026-11-01T20:09:26.300Z",
           "from": 1201.8,
           "to": 1164.9,
           "changePct": -3.07
@@ -118,7 +118,7 @@
       "summary": "Price via Yahoo Finance. NSE news needs Finnhub premium; tracking price + daily move.",
       "alertsToday": [
         {
-          "time": "2026-10-31T19:42:40.081Z",
+          "time": "2026-11-01T20:09:26.805Z",
           "from": 1818.6,
           "to": 1864.6,
           "changePct": 2.53
@@ -164,7 +164,7 @@
       "summary": "Price via Yahoo Finance. NSE news needs Finnhub premium; tracking price + daily move.",
       "alertsToday": [
         {
-          "time": "2026-10-31T19:42:40.457Z",
+          "time": "2026-11-01T20:09:27.055Z",
           "from": 1917.5,
           "to": 1973.7,
           "changePct": 2.93
@@ -184,7 +184,7 @@
       "summary": "Price via Yahoo Finance. NSE news needs Finnhub premium; tracking price + daily move.",
       "alertsToday": [
         {
-          "time": "2026-10-31T19:42:40.571Z",
+          "time": "2026-11-01T20:09:27.137Z",
           "from": 440.75,
           "to": 461.6,
           "changePct": 4.73
