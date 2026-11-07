@@ -1,5 +1,5 @@
 {
-  "generatedAt": "2026-11-06T21:15:12.888Z",
+  "generatedAt": "2026-11-07T19:51:33.453Z",
   "market": "India (NSE)",
   "symbolLabels": {
     "SILVERBEES.NS": "Silver ETF (Nippon Silver BeES)",
@@ -65,7 +65,7 @@
       "summary": "Price via Yahoo Finance. NSE news needs Finnhub premium; tracking price + daily move.",
       "alertsToday": [
         {
-          "time": "2026-11-06T21:15:13.306Z",
+          "time": "2026-11-07T19:51:33.823Z",
           "from": 700,
           "to": 788.25,
           "changePct": 12.61
@@ -98,7 +98,7 @@
       "summary": "Price via Yahoo Finance. NSE news needs Finnhub premium; tracking price + daily move.",
       "alertsToday": [
         {
-          "time": "2026-11-06T21:15:13.458Z",
+          "time": "2026-11-07T19:51:33.992Z",
           "from": 1387.4,
           "to": 1571.2,
           "changePct": 13.25
@@ -118,7 +118,7 @@
       "summary": "Price via Yahoo Finance. NSE news needs Finnhub premium; tracking price + daily move.",
       "alertsToday": [
         {
-          "time": "2026-11-06T21:15:13.534Z",
+          "time": "2026-11-07T19:51:34.091Z",
           "from": 1898.3,
           "to": 1998.4,
           "changePct": 5.27
@@ -138,7 +138,7 @@
       "summary": "Price via Yahoo Finance. NSE news needs Finnhub premium; tracking price + daily move.",
       "alertsToday": [
         {
-          "time": "2026-11-06T21:15:13.659Z",
+          "time": "2026-11-07T19:51:34.159Z",
           "from": 266.4,
           "to": 283.15,
           "changePct": 6.29
@@ -158,7 +158,7 @@
       "summary": "Price via Yahoo Finance. NSE news needs Finnhub premium; tracking price + daily move.",
       "alertsToday": [
         {
-          "time": "2026-11-06T21:15:13.733Z",
+          "time": "2026-11-07T19:51:34.261Z",
           "from": 987,
           "to": 1018.5,
           "changePct": 3.19
@@ -178,7 +178,7 @@
       "summary": "Price via Yahoo Finance. NSE news needs Finnhub premium; tracking price + daily move.",
       "alertsToday": [
         {
-          "time": "2026-11-06T21:15:13.798Z",
+          "time": "2026-11-07T19:51:34.328Z",
           "from": 1989.9,
           "to": 2107.2,
           "changePct": 5.89
@@ -198,7 +198,7 @@
       "summary": "Price via Yahoo Finance. NSE news needs Finnhub premium; tracking price + daily move.",
       "alertsToday": [
         {
-          "time": "2026-11-06T21:15:13.874Z",
+          "time": "2026-11-07T19:51:34.395Z",
           "from": 458.35,
           "to": 480,
           "changePct": 4.72
